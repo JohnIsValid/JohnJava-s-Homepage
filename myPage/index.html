@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>周瀚翔个人主页</title>
+    <meta
+      name="description"
+      content="周瀚翔的个人主页：游戏策划、游戏研究、设计笔记与文章归档。"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="回到首页">
+        <img class="brand-avatar" src="assets/avatar-placeholder.png" alt="周瀚翔头像占位图" />
+        <span>周瀚翔</span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="#about">关于</a>
+        <a href="#articles">文章</a>
+        <a href="#links">推荐</a>
+        <a href="#contact">联系</a>
+        <a class="resume-link" href="resume.html">我的简历</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img
+          class="hero-image"
+          src="assets/hero-writing-desk.png"
+          alt="一张摆放着笔记本、电脑、纸张和钢笔的写作书桌"
+        />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Game Design / Essays / Notes</p>
+          <h1 id="hero-title" class="hero-quote">
+            <span>“看起来有趣，</span>
+            <span>玩起来也有趣”</span>
+            <span class="quote-author">- 三上真司</span>
+          </h1>
+          <p class="hero-copy">
+            这里记录我作为游戏策划的观察、研究和设计复盘。内容会偏严谨、偏学术，
+            也会保留一点黑色幽默。毕竟如果一个系统足够复杂，它迟早会用最荒谬的方式证明自己还活着。
+          </p>
+        </div>
+      </section>
+
+      <section class="about-section" id="about">
+        <div class="about-copy">
+          <p class="eyebrow">About</p>
+          <h2>你好，我是周瀚翔</h2>
+          <p class="about-text">
+            <i class="bi bi-map" aria-hidden="true"></i>
+            我是一名专注箱庭与开放世界的关卡策划、玩法策划，长期关注空间结构、
+            探索节奏、战斗遭遇和玩家行为之间的关系。我也擅长虚幻引擎中的蓝图编程、
+            虚幻引擎工具开发，喜欢把设计想法尽快做成能跑、能测、最好还能及时暴露问题的原型。
+          </p>
+          <p class="about-text">
+            <i class="bi bi-controller" aria-hidden="true"></i>
+            我喜欢各类 3A 游戏，比如《生化危机》《辐射》《毁灭战士》《古墓丽影》等。
+            它们分别以不同方式提醒我：一个好关卡既要经得起理性拆解，也要允许玩家在其中犯错、
+            迷路、回头，然后突然意识到设计者早就在角落里等着他。
+          </p>
+        </div>
+      </section>
+
+      <section class="section-shell" id="articles">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Articles</p>
+            <h2>文章</h2>
+          </div>
+          <div class="filters" aria-label="文章分类筛选">
+            <button class="filter active" type="button" data-filter="all">全部</button>
+            <button class="filter" type="button" data-filter="open-world">大世界</button>
+            <button class="filter" type="button" data-filter="level">关卡</button>
+            <button class="filter" type="button" data-filter="system">系统</button>
+            <button class="filter" type="button" data-filter="narrative">叙事</button>
+          </div>
+        </div>
+
+        <div class="article-grid">
+          <article class="article-card" data-category="system">
+            <span class="article-tag">系统</span>
+            <h3>存档点、弹药和恐惧的经济学</h3>
+            <p>以生存恐怖游戏为例，分析稀缺资源如何把玩家从操作者变成精算师。</p>
+            <div class="article-meta">
+              <span>2026.05.10</span>
+              <span>8 分钟</span>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="open-world">
+            <span class="article-tag">大世界</span>
+            <h3>废土不是背景板，而是一套伦理压力测试</h3>
+            <p>从《辐射》系列出发，聊聊开放世界如何通过选择、代价和荒诞感塑造叙事密度。</p>
+            <div class="article-meta">
+              <span>2026.04.28</span>
+              <span>9 分钟</span>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="level">
+            <span class="article-tag">关卡</span>
+            <h3>一次关卡原型为什么死在第三个房间</h3>
+            <p>记录一个小型设计实验：它如何开始、如何膨胀，以及如何体面地被送进回收站。</p>
+            <div class="article-meta">
+              <span>2026.04.15</span>
+              <span>10 分钟</span>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="narrative">
+            <span class="article-tag">叙事</span>
+            <h3>读理论不是为了显得聪明</h3>
+            <p>理论最有价值的地方，是帮你发现自己原本连问题都问错了。</p>
+            <div class="article-meta">
+              <span>2026.03.30</span>
+              <span>7 分钟</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell link-section" id="links">
+        <div class="section-heading">
+          <p class="eyebrow">Curated</p>
+          <h2>推荐文章与视频</h2>
+        </div>
+        <div class="resource-list">
+          <a class="resource-row" href="#" target="_blank" rel="noopener noreferrer">
+            <span class="resource-type">文章</span>
+            <strong>这里放一篇值得反复阅读的设计文章</strong>
+            <span>可以写一句你推荐它的原因，比如它如何解释关卡、系统或玩家行为。</span>
+          </a>
+          <a class="resource-row" href="#" target="_blank" rel="noopener noreferrer">
+            <span class="resource-type">视频</span>
+            <strong>这里放一个优秀的游戏设计视频</strong>
+            <span>适合收集 GDC 演讲、开发者访谈、设计拆解或你觉得有启发的内容。</span>
+          </a>
+          <a class="resource-row" href="#" target="_blank" rel="noopener noreferrer">
+            <span class="resource-type">资料</span>
+            <strong>这里放一份工具、文档或研究资料</strong>
+            <span>可以是虚幻引擎、关卡编辑、开放世界设计等方向的长期参考。</span>
+          </a>
+          <a class="resource-row" href="#" target="_blank" rel="noopener noreferrer">
+            <span class="resource-type">文章</span>
+            <strong>开放世界探索节奏案例</strong>
+            <span>用于记录你觉得值得学习的开放世界、箱庭或区域设计拆解。</span>
+          </a>
+          <a class="resource-row" href="#" target="_blank" rel="noopener noreferrer">
+            <span class="resource-type">视频</span>
+            <strong>关卡遭遇设计参考</strong>
+            <span>可以放战斗空间、敌人配置、路线引导等方向的视频资料。</span>
+          </a>
+          <a class="resource-row is-extra" href="#" target="_blank" rel="noopener noreferrer">
+            <span class="resource-type">资料</span>
+            <strong>虚幻引擎工具开发参考</strong>
+            <span>适合放蓝图、编辑器工具、自动化流程相关的长期收藏。</span>
+          </a>
+        </div>
+        <button class="show-more-resources" type="button">查看更多</button>
+      </section>
+
+      <section class="subscribe-section" id="contact">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>联系方式</h2>
+          <p>如果你想交流游戏策划、项目合作或文章里的某个问题，可以通过下面的方式联系我。</p>
+        </div>
+        <div class="contact-list" aria-label="联系方式">
+
+          <div class="contact-item">
+            <i class="bi bi-envelope" aria-hidden="true"></i>
+            <span>邮箱</span>
+            <strong>13241261355@163.com</strong>
+            <button class="copy-button" type="button" data-copy="13241261355@163.com">复制</button>
+          </div>
+          <div class="contact-item">
+            <i class="bi bi-wechat" aria-hidden="true"></i>
+            <span>微信</span>
+            <strong>zhx941116</strong>
+            <button class="copy-button" type="button" data-copy="zhx941116">复制</button>
+          </div>
+          <div class="contact-item">
+            <i class="bi bi-phone" aria-hidden="true"></i>
+            <span>手机号</span>
+            <strong>+86 13126576323</strong>
+            <button class="copy-button" type="button" data-copy="+86 13126576323">复制</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>版权所有 © 2026 周瀚翔. All rights reserved.</span>
+      <a href="#top">回到顶部</a>
+    </footer>
+
+    <div class="music-player" aria-label="背景音乐播放器">
+      <audio class="bg-audio" src="assets/Free From Fear.wav" autoplay loop preload="auto"></audio>
+      <span class="equalizer" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+      <span class="song-title">
+        Free From Fear <span class="song-credit"> - Made By ZhouHanxiang</span>
+      </span>
+      <button class="music-button restart-button" type="button" aria-label="重新开始">
+        <i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i>
+      </button>
+      <button class="music-button play-toggle" type="button" aria-label="暂停音乐">
+        <i class="bi bi-pause-fill" aria-hidden="true"></i>
+      </button>
+      <button class="music-button volume-toggle" type="button" aria-label="静音">
+        <i class="bi bi-volume-up-fill" aria-hidden="true"></i>
+      </button>
+      <input
+        class="volume-slider"
+        type="range"
+        min="0"
+        max="60"
+        value="30"
+        aria-label="音量"
+      />
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>周瀚翔 - 关卡策划简历</title>
+    <style>
+      :root {
+        --ink: #202020;
+        --muted: #666;
+        --line: #d9d9d9;
+        --soft: #f5f6f7;
+        --accent: #26547c;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: #eceff1;
+        font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial,
+          sans-serif;
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 18px auto;
+        padding: 15mm 14mm;
+        background: #fff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .header {
+        display: grid;
+        grid-template-columns: 1fr 48mm;
+        gap: 9mm;
+        align-items: start;
+        padding-bottom: 8mm;
+        border-bottom: 2px solid var(--accent);
+      }
+
+      h1 {
+        margin: 0 0 3mm;
+        font-size: 30px;
+        line-height: 1.1;
+        letter-spacing: 0;
+      }
+
+      .target {
+        margin: 0 0 5mm;
+        color: var(--accent);
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .contact {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.2mm;
+        color: var(--muted);
+      }
+
+      .intro-info {
+        display: grid;
+        grid-template-columns: max-content max-content;
+        gap: 3mm 10mm;
+        align-items: start;
+        margin-top: 5mm;
+      }
+
+      .header-education {
+        padding-left: 6mm;
+        border-left: 1px solid var(--line);
+      }
+
+      .mini-title {
+        margin: 0 0 1mm;
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .mini-school {
+        margin: 0;
+        font-weight: 700;
+      }
+
+      .mini-detail {
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .photo-slot,
+      .image-slot {
+        display: grid;
+        place-items: center;
+        min-height: 40mm;
+        border: 1px dashed #aeb6be;
+        color: #777;
+        background: var(--soft);
+        text-align: center;
+        font-size: 12px;
+      }
+
+      .photo-slot {
+        width: 100%;
+        height: 45mm;
+        overflow: hidden;
+      }
+
+      .photo-slot img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+      }
+
+      section {
+        margin-top: 6mm;
+        break-inside: avoid;
+      }
+
+      h2 {
+        display: flex;
+        align-items: center;
+        gap: 3mm;
+        margin: 0 0 3mm;
+        color: var(--accent);
+        font-size: 16px;
+        line-height: 1.25;
+      }
+
+      h2::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--line);
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 14px;
+      }
+
+      p {
+        margin: 0 0 2mm;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 5mm;
+      }
+
+      li {
+        margin: 0 0 1.2mm;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .meta,
+      .date {
+        color: var(--muted);
+      }
+
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2mm 7mm;
+      }
+
+      .timeline-item {
+        margin-bottom: 4.5mm;
+        break-inside: avoid;
+      }
+
+      .timeline-head {
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        gap: 5mm;
+        align-items: baseline;
+        margin-bottom: 1.5mm;
+      }
+
+      .role {
+        color: var(--muted);
+        font-weight: 400;
+      }
+
+      .project {
+        margin: 1.5mm 0 1.5mm;
+        color: #333;
+        font-weight: 700;
+      }
+
+      .skills {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2mm 7mm;
+      }
+
+      .portfolio {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4mm;
+      }
+
+      .image-slot {
+        min-height: 36mm;
+        padding: 4mm;
+      }
+
+      .compact-list li {
+        margin-bottom: 0.8mm;
+      }
+
+      @page {
+        size: A4;
+        margin: 12mm;
+      }
+
+      @media print {
+        body {
+          background: #fff;
+          font-size: 11.5px;
+        }
+
+        .page {
+          width: auto;
+          min-height: auto;
+          margin: 0;
+          padding: 0;
+          box-shadow: none;
+        }
+
+        section {
+          margin-top: 4mm;
+        }
+
+        .timeline-item,
+        section,
+        .image-slot {
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+
+        a {
+          color: inherit;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .page {
+          width: 100%;
+          min-height: auto;
+          margin: 0;
+          padding: 18px;
+        }
+
+        .header,
+        .timeline-head,
+        .summary-grid,
+        .skills,
+        .portfolio {
+          grid-template-columns: 1fr;
+        }
+
+        .photo-slot {
+          width: 100%;
+          height: 180px;
+        }
+
+        .intro-info {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .header-education {
+          padding-left: 0;
+          border-left: 0;
+          padding-top: 12px;
+          border-top: 1px solid var(--line);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <div>
+          <h1>周瀚翔</h1>
+          <p class="target">求职意向：关卡策划 / 系统策划</p>
+          <div class="intro-info">
+            <div class="contact">
+              <span>生日：1994.11.16</span>
+              <span>电话：+86 131 2657 6323</span>
+              <span>邮箱：13241261355@163.com</span>
+              <span>教育经历：北京工业大学 工商管理专业 / 本科 2013.09 - 2017.06</span>
+            </div>
+          </div>
+        </div>
+        <div class="photo-slot">
+          <img src="../123.jpg" alt="周瀚翔个人照片" />
+        </div>
+      </header>
+
+      <section>
+        <h2>能力概括</h2>
+        <div class="summary-grid">
+          <ul class="compact-list">
+            <li>具备 UE4 上线项目《梦想新大陆》研发经验，以及 UE5 开放世界项目《灵笼》《Project_CPW》关卡研发经验。</li>
+            <li>熟悉 UE4 / UE5 引擎工具链，能够围绕蓝图、AI、关卡、Sequence、地编等模块推进玩法落地。</li>
+            <li>可独立使用蓝图完成玩法原型、交互逻辑、AI 行为与关卡脚本开发。</li>
+            <li>理解 Boss 战与敌对 NPC 的 AI 设计方法，能够通过行为逻辑扩展战斗节奏与玩法变化。</li>
+          </ul>
+          <ul class="compact-list">
+            <li>了解 PC 与移动端性能约束，能够在关卡设计阶段兼顾体验、资源规模与优化方案。</li>
+            <li>空间感强，擅长大比例尺 3D 立体玩法、开放世界探索内容与白盒验证。</li>
+            <li>具备产品级关卡搭建能力，理解距离、色彩、视觉引导等表现层设计。</li>
+            <li>沟通耐心、逻辑清晰，熟悉程序与美术协作方式，便于跨职能推进需求。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>工作经验</h2>
+
+        <article class="timeline-item">
+          <div class="timeline-head">
+            <h3>完美世界 <span class="role">高级关卡策划（职级 13）</span></h3>
+            <span class="date">2022.12 - 至今</span>
+          </div>
+          <p class="project">《灵笼》：UE5 开放世界游戏</p>
+          <ul>
+            <li>制定大世界关卡比例尺标准，参与玩法结构、资源分布与难度节奏规划。</li>
+            <li>搭建场景与玩法白模，使用蓝图脚本验证触发器、交互对象与玩法单元逻辑。</li>
+            <li>设计并开发玩法单元、触发器、交互、单/多实例、种植点、预制体等底层逻辑。</li>
+            <li>沉淀蓝图资源使用规范、PCG 功能使用方式与各类功能说明文档。</li>
+            <li>评估策划效率工具与插件，并结合项目需求提出 UE5 原生功能调整方案。</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-head">
+            <h3>那年夏天科技有限公司 <span class="role">高级关卡策划</span></h3>
+            <span class="date">2022.02 - 2022.12</span>
+          </div>
+          <p class="project">《Project_CPW》：UE5 开放世界冒险游戏，Demo 阶段 TapTap 两周获得 30w 关注，B 站播放量 40w</p>
+          <ul>
+            <li>规划大世界难度、据点与解谜分布，制定探索、解谜、战斗、动作等玩法占比。</li>
+            <li>独立设计 50+ 解谜内容，并通过白盒搭建验证流程、可玩性与副本难度。</li>
+            <li>设计攀爬系统及其玩法扩展，参与 Boss 与 NPC 的 AI 行为设计。</li>
+            <li>梳理关卡机关的交互表现、行为逻辑，以及背包道具与场景机关的交互规则。</li>
+            <li>在程序人手不足阶段，使用蓝图协助完成镜头、AI、拾取、天气时间、UI、简易伤害系统等基础功能与问题修复。</li>
+            <li>参与图鉴、背包、料理、对话、拍照、Tips 等功能设计，并协助搭建性能优化框架。</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-head">
+            <h3>祖龙娱乐 <span class="role">系统策划 / 技术策划</span></h3>
+            <span class="date">2020.06 - 2022.02</span>
+          </div>
+          <p class="project">《梦想新大陆》：UE4 回合制手游，涵盖 PvE 与 PvP 传统玩法</p>
+          <ul>
+            <li>独立设计并跟进性能优化方案，解决 300+ 性能问题，并制定美术研发性能规范。</li>
+            <li>设计并维护 27000 行性能控制文件 Qualitycfg.lua，覆盖阴影、材质、特效、LOD、DrawCall、Culling、内存、贴图等项目，使高端机最高画质耗电量由 3450 降至 2650。</li>
+            <li>负责宠物系统与坐骑系统，完成宠物装备、合成、培养、进化、进阶等子系统设计，并产出 20+ 宠物与 10+ 技能。</li>
+            <li>推进战斗系统体验优化、场景表现功能、白盒搭建、版本资源管理与 UE4 技术问题支持。</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-head">
+            <h3>龙图游戏 <span class="role">关卡策划</span></h3>
+            <span class="date">2016.08 - 2017.05</span>
+          </div>
+          <p class="project">《TERA：Classic》：手游 MMORPG，台服、韩服已上线</p>
+          <ul>
+            <li>参与剧情、PVP、活动副本及相关玩法系统设计，撰写 GDD，相关关卡经线上验证后保留为主要玩法。</li>
+            <li>设计世界怪、副本怪、活动怪与 NPC 的 AI 行为。</li>
+            <li>拆分程序与美术需求，跟进交付质量，并参与关卡流程测试与优化。</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-head">
+            <h3>华润置地 <span class="role">产品经理</span></h3>
+            <span class="date">2017.06 - 2020.06</span>
+          </div>
+          <ul>
+            <li>负责商场创新娱乐业态招商与规划，参与筹备期、在建期工程施工管理及运营期管理。</li>
+            <li>参与市场调研与客户需求分析，撰写项目定位报告。</li>
+            <li>提供部门 IT 技术支持与软件应用培训。</li>
+          </ul>
+        </article>
+      </section>
+
+      <section>
+        <h2>独立项目</h2>
+        <div class="timeline-item">
+          <div class="timeline-head">
+            <h3>三年独立游戏开发经验</h3>
+            <span class="date">2017.06 - 至今</span>
+          </div>
+          <ul>
+            <li>《INFECTED》：UE4 PC 项目，固定视角 Horror AVG。视频地址：<a href="https://www.bilibili.com/video/BV1D7411f7rG/">https://www.bilibili.com/video/BV1D7411f7rG/</a></li>
+            <li>《Escape》：UE4 PC 第一人称解谜项目。</li>
+            <li>独立完成系统、关卡、玩法、文案、数值、UI、数据架构、程序开发与场景地编等完整开发流程。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>项目图片占位</h2>
+        <div class="portfolio">
+          <div class="image-slot">作品截图位置 1<br />建议放关卡白盒 / 场景搭建图</div>
+          <div class="image-slot">作品截图位置 2<br />建议放玩法流程 / 解谜设计图</div>
+          <div class="image-slot">作品截图位置 3<br />建议放蓝图 / AI 行为树展示</div>
+          <div class="image-slot">作品截图位置 4<br />建议放开放世界规划 / 资源分布图</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>专长技能</h2>
+        <div class="skills">
+          <ul class="compact-list">
+            <li>UE4 / UE5：蓝图、AI、动画、关卡、Sequence、地编与功能实现。</li>
+            <li>Blueprint：可独立实现玩法原型、交互逻辑与中大型系统。</li>
+            <li>TypeScript：可用于部分 UE4 / UE5 工具与功能开发。</li>
+            <li>BehaviorTree：熟练使用 UE4 内置 BehaviorTree 与腾讯开源 BehaviorTree。</li>
+          </ul>
+          <ul class="compact-list">
+            <li>Office：精通 Visio、Word、PPT、Excel。</li>
+            <li>AutoCAD：3 年建筑绘图经验，覆盖多个工程专业。</li>
+            <li>Adobe：长期使用 Photoshop、Illustrator、After Effects。</li>
+            <li>HTML + CSS：了解基础语法与部分 H5 功能，可实现简单网页并连通前后端。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>自我介绍</h2>
+        <ul>
+          <li>长期关注关卡玩法、功能实现、美术资源组织与性能优化之间的平衡。</li>
+          <li>对游戏时长、关卡尺寸、节奏控制与玩家需求有较好的判断能力。</li>
+          <li>擅长 AVG、MMORPG 关卡与玩法设计，以及 FPS、TPS、MMORPG、AVG 中敌对 NPC 与 Boss AI 设计。</li>
+          <li>可使用蓝图独立开发 Demo，并具备场景地编与原型验证能力。</li>
+          <li>具备 6 次 GameJam 经验，其中 3 次独立开发、1 次领队开发；20 余年游戏经验，热爱 FPS、TPS、RPG、AVG、RTS、OpenWorld、SandBox 等类型。</li>
+          <li>知乎文章：关于游戏中攀爬功能设计的思考 <a href="https://zhuanlan.zhihu.com/p/507206442">https://zhuanlan.zhihu.com/p/507206442</a></li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
