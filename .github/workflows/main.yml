@@ -15,4 +15,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./   # 你的整个网页文件夹内容
+          publish_dir: ./myPage
