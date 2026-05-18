@@ -1,6 +1,5 @@
 const filterButtons = document.querySelectorAll(".filter");
 const articleGrid = document.querySelector(".article-grid");
-const markdownPreview = document.querySelector(".markdown-preview");
 const showMoreArticles = document.querySelector(".show-more-articles");
 const copyButtons = document.querySelectorAll(".copy-button");
 const audio = document.querySelector(".bg-audio");
@@ -95,6 +94,7 @@ const showPage = (index, shouldUpdateHash = true) => {
 
   activePageIndex = nextPageIndex;
   updatePageNavigation();
+  window.scrollTo(0, 0);
 
   if (shouldUpdateHash && !isSamePage) {
     const nextHash = getSectionHash(pageSections[activePageIndex]);
@@ -112,6 +112,10 @@ pageLinks.forEach((link) => {
 
 pagePrev?.addEventListener("click", () => showPage(activePageIndex - 1));
 pageNext?.addEventListener("click", () => showPage(activePageIndex + 1));
+
+window.addEventListener("hashchange", () => {
+  showPage(getPageIndexFromHash(window.location.hash), false);
+});
 
 window.addEventListener(
   "wheel",
@@ -188,61 +192,6 @@ const getExcerpt = (content) => {
   return cleanContent ? `${cleanContent.slice(0, 76)}${cleanContent.length > 76 ? "..." : ""}` : "点击预览这篇 Markdown 文章。";
 };
 
-const renderMarkdown = (content) => {
-  const lines = stripFrontMatter(content).split(/\r?\n/);
-  let html = "";
-  let inList = false;
-
-  lines.forEach((line) => {
-    const trimmed = line.trim();
-
-    if (!trimmed) {
-      if (inList) {
-        html += "</ul>";
-        inList = false;
-      }
-      return;
-    }
-
-    const heading = trimmed.match(/^(#{1,4})\s+(.+)$/);
-    const listItem = trimmed.match(/^[-*+]\s+(.+)$/);
-
-    if (heading) {
-      if (inList) {
-        html += "</ul>";
-        inList = false;
-      }
-
-      const level = Math.min(heading[1].length + 1, 4);
-      html += `<h${level}>${escapeHtml(heading[2])}</h${level}>`;
-      return;
-    }
-
-    if (listItem) {
-      if (!inList) {
-        html += "<ul>";
-        inList = true;
-      }
-
-      html += `<li>${escapeHtml(listItem[1])}</li>`;
-      return;
-    }
-
-    if (inList) {
-      html += "</ul>";
-      inList = false;
-    }
-
-    html += `<p>${escapeHtml(trimmed)}</p>`;
-  });
-
-  if (inList) {
-    html += "</ul>";
-  }
-
-  return html;
-};
-
 const revealCards = () => {
   articleCards.forEach((card) => card.classList.add("is-visible"));
 };
@@ -268,30 +217,10 @@ const observeCards = () => {
   articleCards.forEach((card) => cardObserver.observe(card));
 };
 
-const showArticle = async (file) => {
-  if (!markdownPreview) return;
-
+const selectArticle = (file) => {
   articleCards.forEach((card) => {
     card.classList.toggle("is-active", card.dataset.file === file.url);
   });
-
-  markdownPreview.innerHTML = '<p class="article-empty">正在打开文章...</p>';
-
-  try {
-    const response = await fetch(file.url);
-    if (!response.ok) throw new Error("文章读取失败");
-
-    const content = await response.text();
-    markdownPreview.innerHTML = `
-      <div class="markdown-preview-title">
-        <span>${categoryLabels[file.category] || file.category}</span>
-        <h3>${escapeHtml(file.title)}</h3>
-      </div>
-      <div class="markdown-body">${renderMarkdown(content)}</div>
-    `;
-  } catch {
-    markdownPreview.innerHTML = '<p class="article-empty">这篇文章暂时无法预览，请确认网页是通过本地服务器打开的。</p>';
-  }
 };
 
 const renderArticleCards = () => {
@@ -317,12 +246,12 @@ const renderArticleCards = () => {
   articleCards = Array.from(document.querySelectorAll(".article-card"));
   articleCards.forEach((card) => {
     const file = markdownFiles.find((item) => item.url === card.dataset.file);
-    card.addEventListener("click", () => showArticle(file));
+    card.addEventListener("click", () => selectArticle(file));
   });
 
   observeCards();
   updateArticleVisibility();
-  showArticle(markdownFiles[0]);
+  selectArticle(markdownFiles[0]);
 };
 
 const updateArticleVisibility = () => {
